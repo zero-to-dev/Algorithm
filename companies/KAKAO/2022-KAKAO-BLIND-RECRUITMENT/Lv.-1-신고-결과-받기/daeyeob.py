@@ -10,4 +10,4 @@ def solution(id_list, report, k):   # 신고자 리스트, 신고자&피신고�
             idx = id_list.index(who.split(' ')[0])
             mail_list[idx] += 1   # 해당 신고자는 신고 성공
 
-    return 
+    return mail_list
