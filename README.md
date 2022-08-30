@@ -1,7 +1,7 @@
 # 알고리즘
 
 ## 이번주: 2022 KAKAO BLIND RECRUITMENT
- 
+
 - Lv. 1 신고 결과 받기: [링크](https://school.programmers.co.kr/learn/courses/30/lessons/92334)
 - Lv. 2 k진수에서 소수 개수 구하기: [링크](https://school.programmers.co.kr/learn/courses/30/lessons/92335)
 - Lv. 2 주차 요금 계산: [링크](https://school.programmers.co.kr/learn/courses/30/lessons/92341)
@@ -12,11 +12,16 @@
 
 |  이름  | 29일 | 30일 | 31일 | 01일 | 02일 |
 | :----: | :--: | :--: | :--: | :--: | :--: |
+<<<<<<< HEAD
 | 김선만 |  ❌  |  ❌  |  ❌  |  ❌  |  ❌  |
 | 김대엽 |  ❌  |  ❌  |  ❌  |  ❌  |  ❌  |
+=======
+| 김선만 |  ✅  |  ✅  |  ❌  |  ❌  |  ❌  |
+| 김대엽 |  ✅  |  ❌  |  ❌  |  ❌  |  ❌  |
+>>>>>>> 83e585da0819eea61a5123f5b47bacdbc55e5b59
 | 우종혁 |  ✅  |  ❌  |  ❌  |  ❌  |  ❌  |
 | 위연주 |  ❌  |  ❌  |  ❌  |  ❌  |  ❌  |
-| 최화경 |  ❌  |  ❌  |  ❌  |  ❌  |  ❌  |
+| 최화경 |  ✅  |  ❌  |  ❌  |  ❌  |  ❌  |
 
 ---
 
