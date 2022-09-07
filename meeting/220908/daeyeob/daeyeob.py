@@ -1,112 +1,3 @@
-# [양궁대회](https://school.programmers.co.kr/learn/courses/30/lessons/92342) 살펴보기
-
-## 팀원 풀이 해석 
-
-### [1. 화경님 풀이](https://github.com/zero-to-dev/Algorithm/blob/main/companies/KAKAO/2022-KAKAO-BLIND-RECRUITMENT/Lv.-2-%EC%96%91%EA%B6%81%EB%8C%80%ED%9A%8C/hwakyung.md)
-
-
-#### 사용된 개념 
-- [itertools](https://docs.python.org/3/library/itertools.html)
-  - 효과적인 loop 구성을 위해 반복자(iterator)를 생성하는 함수 
-
-- [combinations_with_replacement](https://docs.python.org/3/library/itertools.html#itertools.combinations_with_replacement)
-  - 중복조합 구현시 사용하는 모듈
-
-- 중복조합
-  - 중복 가능한 n개중에서 r개를 선택하는 경우의 수 (순서 상관 없음)
-  - ![img.png](img.png) 
-
-- 사용예시 
-```python
-from itertools import combinations_with_replacement
-for combination in combinations_with_replacement(range(1,4),2):   
-# 1~3의 숫자를 2개씩 뽑아서 중복조합 구현
-    print(combination)
-# 튜플로 반환
-
-'''
-  (1, 1)
-  (1, 2)
-  (1, 3)
-  (2, 2)
-  (2, 3)
-  (3, 3)
-'''
-
-# 한줄 구현
-import itertools
-print(list(itertools.combinations_with_replacement(range(1,4),2)))
-
-# [(1, 1), (1, 2), (1, 3), (2, 2), (2, 3), (3, 3)]
-```
-  
-- 코드 뜯어보기
-```python
-from itertools import combinations_with_replacement
-
-def solution(n, info):
-    answer = [-1]
-    max_gap = -1  # 점수차
-
-    # 중복 조합으로 0~10점까지 n개 뽑기
-    for combination in combinations_with_replacement(range(11), n):
-        lion_list = [0] * 11  # 라이언의 과녁 점수
-        print(combination)
-        # combination에 해당하는 화살들을 라이언 과녁 점수에 넣기
-        for i in combination:  # 중복조합으로 나오는 점수를 담은 튜플에서 앞에서부터 하나씩 점수 체킹
-            lion_list[10 - i] += 1   # 튜플에는 점수가 내림차순으로 배열 & 해당 점수칸에 적중횟수 1증가
-        lion, peach = 0, 0
-
-        # 라이언과 어피치 점수칸별 비교(10점 -> .. -> 0점)
-        for idx in range(11):
-            # 라이언과 어피치 모두 한번도 화살을 맞히지 못하는 경우
-            if info[idx] == 0 and lion_list[idx] == 0:
-                continue  # 아래 코드를 실행하지 않고 건너뜀
-            # 라이언이 어피치가 쏜 화살의 수 이상을 맞힌 경우
-            elif lion_list[idx] > info[idx]:
-                lion += 10 - idx   # 라이언이 해당 점수 가져감
-            # 어피치가 라이언보다 많은 수의 화살을 맞힌 경우
-            elif lion_list[idx] <= info[idx]:
-                peach += 10 - idx   # 어피치가 해당 점수 가져감
-
-        # 라이언의 점수가  더 높은 경우
-        if lion > peach:
-            # 기존보다 더 큰 점수차인 경우
-            if lion - peach > max_gap:
-                max_gap = lion - peach   # 최대 점수차 갱신
-                answer = lion_list   # 이때의 라이언의 점수 리스트를 정답으로 갱신
-
-    return answer
-
-print("1번 케이스:", solution(5,[2,1,1,1,0,0,0,0,0,0,0]))  # [0,2,2,0,1,0,0,0,0,0,0]
-print("2번 케이스:", solution(5,[2,1,1,1,0,0,0,0,0,0,0]))   # [-1]
-print("3번 케이스", solution(5,[0,0,1,2,0,1,1,1,1,1,1]))  # [1,1,2,0,1,2,2,0,0,0,0]
-print("4번 케이스", solution(10,[0,0,0,0,0,0,0,0,3,4,3]))   # [1,1,1,1,1,1,1,1,0,0,2]
-```
-
-- 중복조합으로 라이언이 쏠 수 있는 점수들의 조합을 모두 살펴보면서 라이언의 점수를 계산하고 어피치아 점수를 비교함
-- (조건에 따라)점수 차이가 같은 경우<br>-> 낮은 점수의 비중이 큰 경우를 return<br>-> 따라서 낮은 점수부터 채우면서 라이언의 점수 게산
-- 라이언의 점수가 어피치가 큰 경우에는, 점수차를 계산 비교하면서 갱신
-- 수학적인 센스가 필요한 문제풀이였음 (조합)
-- DFS, BFS등과 같은 알고리즘과 달리 중복조합 개념을 떠올릴 수 있다면 직관적으로 빠르게 해답을 도출해낼 수 있겠다는 생각이 들었음
-
-<br><br>
-
-### [2. 연주님 풀이](https://github.com/zero-to-dev/Algorithm/blob/main/companies/KAKAO/2022-KAKAO-BLIND-RECRUITMENT/Lv.-2-%EC%96%91%EA%B6%81%EB%8C%80%ED%9A%8C/yeonju.md)
-
-
-#### 사용된 개념 
-
-- [배열복사 (deep copy VS shallow copy)](https://wikidocs.net/16038)
-- [collections](https://docs.python.org/ko/3/library/collections.html)
-  - 컨테이너 데이터형 구현
-  
-- [collections.deque](https://wikidocs.net/104977)
-  - 앞과 뒤에서 데이터를 처리할 수 있는 양방향 자료형 (스택 & 큐 모두 가능)
-
-
-## 문제풀이 해설  - 비트마스크 알고리즘
-```python
 # https://school.programmers.co.kr/learn/courses/30/lessons/92342
 # 아이디어 - 비트마스크(BitMask) 알고리즘
 
@@ -170,7 +61,10 @@ def solution(n, info):  # n: 화살의 개수, info: 어피치가 맞춘 과녁 
         answer = [-1]
 
     return answer
-
+print("1번 케이스:", solution(5,[2,1,1,1,0,0,0,0,0,0,0]))  # [0,2,2,0,1,0,0,0,0,0,0]
+print("2번 케이스:", solution(5,[2,1,1,1,0,0,0,0,0,0,0]))   # [-1]
+print("3번 케이스", solution(5,[0,0,1,2,0,1,1,1,1,1,1]))  # [1,1,2,0,1,2,2,0,0,0,0]
+print("4번 케이스", solution(10,[0,0,0,0,0,0,0,0,3,4,3]))   # [1,1,1,1,1,1,1,1,0,0,2]
 
 
 '''
@@ -189,7 +83,5 @@ def solution(n, info):  # n: 화살의 개수, info: 어피치가 맞춘 과녁 
 - 이진수 => 0(꺼져있다), 1(켜져있다)를 이용하므로 1bit로 두가지를 표현할 수 있음
 - 수행시간이 빠름 (bit 연산이므로 O(1)시간에 구현되는 것이 많음 => 연산 횟수가 늘어날 수록 유용) 
 - 코드가 짧음 & 메모리 사용량이 적음
+
 '''
-
-```
-
