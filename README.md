@@ -2,21 +2,11 @@
 
 ## 이번주: 2022 KAKAO BLIND RECRUITMENT
 
-- Lv. 1 신고 결과 받기: [링크](https://school.programmers.co.kr/learn/courses/30/lessons/92334)
-- Lv. 2 k진수에서 소수 개수 구하기: [링크](https://school.programmers.co.kr/learn/courses/30/lessons/92335)
-- Lv. 2 주차 요금 계산: [링크](https://school.programmers.co.kr/learn/courses/30/lessons/92341)
-- Lv. 2 양궁대회: [링크](https://school.programmers.co.kr/learn/courses/30/lessons/92342)
-- Lv. 3 양과 늑대: [링크](https://school.programmers.co.kr/learn/courses/30/lessons/92343)
-
-## 진행표
-
-|  이름  | 29일 | 30일 | 31일 | 01일 | 02일 |
-| :----: | :--: | :--: | :--: | :--: | :--: |
-| 김선만 |  ✅  |  ✅  |  ✅  |  ✅  |  ❌  |
-| 김대엽 |  ✅  |  ✅  |  ✅  |  ✅  |  ✅  |
-| 우종혁 |  ✅  |  ✅  |  ✅  |  ❌  |  ❌  |
-| 위연주 |  ✅  |  ✅  |  ✅  |  ✅  |  ✅  |
-| 최화경 |  ✅  |  ✅  |  ✅  |  ✅  |  ✅  |
+- 위연주 [Lv.-2-두-큐-합-같게-만들기](https://school.programmers.co.kr/learn/courses/30/lessons/118667)
+- 최화경 [Lv.-3-등산코스-정하기](https://school.programmers.co.kr/learn/courses/30/lessons/118669)
+- 김대엽 [Lv.-3-코딩-테스트-공부](https://school.programmers.co.kr/learn/courses/30/lessons/118669)
+- 우종혁 [Lv.-4-행렬과-연산](https://school.programmers.co.kr/learn/courses/30/lessons/118670)
+- 김선만 [코딩 인터뷰 완전 분석](https://search.shopping.naver.com/book/catalog/32443843634?cat_id=50010920&frm=PBOKPRO&query=%EC%BD%94%EB%94%A9+%EC%9D%B8%ED%84%B0%EB%B7%B0+%EC%99%84%EC%A0%84+%EB%B6%84%EC%84%9D&NaPm=ct%3Dl7t1sxlk%7Cci%3D0e687ba7dc7d6fa55c2adb3b23787741b2198e30%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3D73006669a5cac6de903772a3f238aa868396ab38)
 
 ---
 
